@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    image: zhoutijie/code:latest
+    container_name: my_container
+    network_mode: host
+    volumes:
+      - .:/opt/app
+    environment:
+      - ANTHROPIC_BASE_URL=${ANTHROPIC_BASE_URL}
+      - ANTHROPIC_AUTH_TOKEN=${ANTHROPIC_AUTH_TOKEN}
+    entrypoint: zsh
+    stdin_open: true
+    tty: true
